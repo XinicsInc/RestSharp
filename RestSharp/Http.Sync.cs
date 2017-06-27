@@ -258,6 +258,7 @@ namespace RestSharp
             webRequest.UseDefaultCredentials = this.UseDefaultCredentials;
             webRequest.PreAuthenticate = this.PreAuthenticate;
             webRequest.ServicePoint.Expect100Continue = false;
+            webRequest.AllowWriteStreamBuffering = false; // for large file multipart file upload
 
             this.AppendHeaders(webRequest);
             this.AppendCookies(webRequest);
